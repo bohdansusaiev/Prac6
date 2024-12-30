@@ -63,33 +63,13 @@ public void printMessageAfter15Seconds() {
 
 ## Запуск програми
 
-1. Скомпілюйте та побудуйте програму за допомогою Gradle:
+1. Компіляція та побудова програми за допомогою Gradle:
    ```bash
    ./gradlew build
    ```
 
-2. Запустіть програму:
+2. Запуск програми:
    ```bash
    ./gradlew bootRun
    ```
-
-## Основний клас програми
-
-```java
-@SpringBootApplication
-public class Application implements CommandLineRunner {
-
-    @Autowired
-    private TaskService taskService;
-
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
-
-    @Override
-    public void run(String... args) {
-        taskService.executeTaskWithRetries(); // Виконання задачі з повторними спробами
-    }
-}
-```
 
